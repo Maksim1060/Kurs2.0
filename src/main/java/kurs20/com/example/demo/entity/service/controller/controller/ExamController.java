@@ -1,6 +1,6 @@
 package kurs20.com.example.demo.entity.service.controller.controller;
 
-import kurs20.com.example.demo.entity.JavaQuestionService;
+import kurs20.com.example.demo.entity.Question;
 import kurs20.com.example.demo.entity.service.controller.srevice.ExaminerService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,7 +19,7 @@ public class ExamController {
     }
 
     @GetMapping("/get/{amount}")
-    public Collection<JavaQuestionService> getQuestions(@PathVariable int amount) {
+    public Collection<Question> getQuestions(@PathVariable int amount) {
         return examinerService.getQuestions(amount);
     }
 }

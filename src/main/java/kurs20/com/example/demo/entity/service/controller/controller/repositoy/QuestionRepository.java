@@ -1,15 +1,15 @@
 package kurs20.com.example.demo.entity.service.controller.controller.repositoy;
 
-import kurs20.com.example.demo.entity.JavaQuestionService;
+import kurs20.com.example.demo.entity.Question;
 
 import java.util.Collection;
 
 public interface QuestionRepository {
-    JavaQuestionService add(JavaQuestionService question);
+    Question add(Question question);
 
-    JavaQuestionService remove(JavaQuestionService question);
+    Question remove(Question question);
 
-    Collection<JavaQuestionService> getAll();
+    Collection<Question> getAll();
 
 
 

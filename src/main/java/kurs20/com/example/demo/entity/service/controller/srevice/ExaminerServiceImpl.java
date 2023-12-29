@@ -1,6 +1,6 @@
 package kurs20.com.example.demo.entity.service.controller.srevice;
 
-import kurs20.com.example.demo.entity.JavaQuestionService;
+import kurs20.com.example.demo.entity.Question;
 import kurs20.com.example.demo.entity.service.QuestionService;
 import kurs20.com.example.demo.entity.service.controller.controller.exception.ExaminerServiceException;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -23,11 +23,11 @@ public class ExaminerServiceImpl implements ExaminerService {
     }
 
     @Override
-    public Collection<JavaQuestionService> getQuestions(int size) {
+    public Collection<Question> getQuestions(int size) {
         if (javaQuestionService.getAll().size() + mathQuestionService.getAll().size() < size) {
             throw new ExaminerServiceException("Запрошено большое количество вопросов, чем хранится в сервисе");
         }
-        Collection<JavaQuestionService> result = new HashSet<>();
+        Collection<Question> result = new HashSet<>();
         while (result.size() < size) {
             if (new Random().nextBoolean()) {
                 result.add(javaQuestionService.getRandomQuestion());

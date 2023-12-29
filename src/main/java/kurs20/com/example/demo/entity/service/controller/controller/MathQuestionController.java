@@ -1,6 +1,6 @@
 package kurs20.com.example.demo.entity.service.controller.controller;
 
-import kurs20.com.example.demo.entity.JavaQuestionService;
+import kurs20.com.example.demo.entity.Question;
 import kurs20.com.example.demo.entity.service.QuestionService;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,16 +20,16 @@ public class MathQuestionController {
     }
 
     @GetMapping("/add")
-    public JavaQuestionService add(@RequestParam String question, @RequestParam String answer) {
+    public Question add(@RequestParam String question, @RequestParam String answer) {
         return questionService.add(question, answer);
     }
     @GetMapping("/remove")
-    public JavaQuestionService remove(@RequestParam String question, @RequestParam String answer) {
+    public Question remove(@RequestParam String question, @RequestParam String answer) {
         return questionService.remove(question, answer);
     }
 
     @GetMapping
-    public Collection<JavaQuestionService> getAll() {
+    public Collection<Question> getAll() {
         return  questionService.getAll();
     }
 }
