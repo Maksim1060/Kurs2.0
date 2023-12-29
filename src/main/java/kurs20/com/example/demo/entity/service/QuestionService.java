@@ -1,15 +1,15 @@
 package kurs20.com.example.demo.entity.service;
 
-import kurs20.com.example.demo.entity.Question;
+import kurs20.com.example.demo.entity.JavaQuestionService;
 
 import java.util.Collection;
 
 public interface QuestionService {
-    Question add(String question, String answer);
+    JavaQuestionService add(String question, String answer);
 
-    Question add(Question question);
+    JavaQuestionService add(JavaQuestionService question);
 
-    Question remove(String question, String answer);
-    Collection <Question> getAll();
-    Question getRandomQuestion();
+    JavaQuestionService remove(String question, String answer);
+    Collection <JavaQuestionService> getAll();
+    JavaQuestionService getRandomQuestion();
 }

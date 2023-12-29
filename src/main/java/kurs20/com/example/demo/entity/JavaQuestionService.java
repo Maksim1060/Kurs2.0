@@ -2,11 +2,11 @@ package kurs20.com.example.demo.entity;
 
 import java.util.Objects;
 
-public class Question {
+public class JavaQuestionService {
     public String question;
     private String answer;
 
-    public Question(String question, String answer) {
+    public JavaQuestionService(String question, String answer) {
         this.question = question;
         this.answer = answer;
     }
@@ -23,7 +23,7 @@ public class Question {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Question question1 = (Question) o;
+        JavaQuestionService question1 = (JavaQuestionService) o;
         return Objects.equals(question, question1.question) && Objects.equals(answer, question1.answer);
     }
 

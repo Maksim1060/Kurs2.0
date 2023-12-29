@@ -1,31 +1,39 @@
 package kurs20.com.example.demo.entity.service.controller.srevice;
 
-import kurs20.com.example.demo.entity.Question;
+import kurs20.com.example.demo.entity.JavaQuestionService;
 import kurs20.com.example.demo.entity.service.QuestionService;
 import kurs20.com.example.demo.entity.service.controller.controller.exception.ExaminerServiceException;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 import java.util.HashSet;
-import java.util.concurrent.ExecutionException;
+import java.util.Random;
 
 @Service
 
 public class ExaminerServiceImpl implements ExaminerService {
-    private final QuestionService questionService;
+    private final QuestionService javaQuestionService;
+    private final QuestionService mathQuestionService;
 
-    public ExaminerServiceImpl(QuestionService questionService) {
-        this.questionService = questionService;
+    public ExaminerServiceImpl(@Qualifier("questionQuestionService") QuestionService javaQuestionService,
+                               @Qualifier("mathQuestionService") QuestionService mathQuestionService) {
+        this.javaQuestionService = javaQuestionService;
+        this.mathQuestionService = mathQuestionService;
     }
 
     @Override
-    public Collection<Question> getQuestions(int size) {
-        if (questionService.getAll().size() < size) {
+    public Collection<JavaQuestionService> getQuestions(int size) {
+        if (javaQuestionService.getAll().size() + mathQuestionService.getAll().size() < size) {
             throw new ExaminerServiceException("Запрошено большое количество вопросов, чем хранится в сервисе");
         }
-        Collection<Question> result = new HashSet<>();
+        Collection<JavaQuestionService> result = new HashSet<>();
         while (result.size() < size) {
-            result.add(questionService.getRandomQuestion());
+            if (new Random().nextBoolean()) {
+                result.add(javaQuestionService.getRandomQuestion());
+            } else {
+                result.add(mathQuestionService.getRandomQuestion());
+            }
         }
         return result;
     }
