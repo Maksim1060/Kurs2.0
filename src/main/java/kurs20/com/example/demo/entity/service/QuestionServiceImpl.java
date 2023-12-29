@@ -1,33 +1,43 @@
 package kurs20.com.example.demo.entity.service;
 
 import kurs20.com.example.demo.entity.Question;
+import org.springframework.stereotype.Service;
 
-import java.util.Collection;
+import java.util.*;
 
+@Service
 public class QuestionServiceImpl implements QuestionService {
+    private final Collection<Question> questions = new HashSet<>();
     @Override
     public Question add(String question, String answer) {
-
-        return null;
+        Question newQuestion = new Question(question, answer);
+        questions.add(newQuestion);
+        return newQuestion;
     }
 
     @Override
     public Question add(Question question) {
-        return null;
+        questions.add(question);
+        return question;
     }
 
     @Override
-    public Question remove(Question question) {
-        return null;
+    public Question remove(String question, String answer) {
+        Question questionForRemove = new Question(question, answer);
+        questions.remove(question);
+        return questionForRemove;
+
     }
 
     @Override
     public Collection<Question> getAll() {
-        return null;
+        return questions;
     }
 
     @Override
     public Question getRandomQuestion() {
-        return null;
+        int randomInx = new Random().nextInt(questions.size());
+        return new ArrayList<>(questions).get(randomInx);
+
     }
 }
