@@ -1,4 +1,4 @@
-package kurs20.com.example.demo.entity.service.controller.controller;
+package kurs20.com.example.demo.entity.controller;
 
 import kurs20.com.example.demo.entity.Question;
 import kurs20.com.example.demo.entity.service.QuestionService;
@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Collection;
 
 @RestController
-@RequestMapping("/exam/math")
-public class MathQuestionController {
+@RequestMapping("/exam/java")
+public class JavaQuestionController {
     private final QuestionService questionService;
 
-    public MathQuestionController(@Qualifier("mathQuestionService") QuestionService questionService) {
+    public JavaQuestionController(@Qualifier(" questionService") QuestionService questionService) {
         this.questionService = questionService;
     }
 
@@ -33,4 +33,3 @@ public class MathQuestionController {
         return  questionService.getAll();
     }
 }
-

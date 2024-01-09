@@ -1,4 +1,4 @@
-package kurs20.com.example.demo.entity.service.controller.controller.exception;
+package kurs20.com.example.demo.entity.exception;
 
 import jdk.jfr.StackTrace;
 import org.springframework.http.HttpStatus;

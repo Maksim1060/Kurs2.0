@@ -1,11 +1,12 @@
-package kurs20.com.example.demo.entity.service.controller.controller.repositoy;
+package kurs20.com.example.demo.entity.repositoy;
 
 import kurs20.com.example.demo.entity.Question;
+import org.springframework.stereotype.Repository;
 
 import java.util.Collection;
 import java.util.HashSet;
-
-public class JavaQuestionRepository implements QuestionRepository {
+@Repository
+public class MathQuestionRepository implements QuestionRepository {
     private final Collection<Question> questions = new HashSet<>();
     @Override
     public Question add(Question question) {

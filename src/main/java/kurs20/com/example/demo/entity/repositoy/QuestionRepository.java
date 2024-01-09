@@ -1,9 +1,10 @@
-package kurs20.com.example.demo.entity.service.controller.controller.repositoy;
+package kurs20.com.example.demo.entity.repositoy;
 
 import kurs20.com.example.demo.entity.Question;
+import org.springframework.stereotype.Repository;
 
 import java.util.Collection;
-
+@Repository
 public interface QuestionRepository {
     Question add(Question question);
 
