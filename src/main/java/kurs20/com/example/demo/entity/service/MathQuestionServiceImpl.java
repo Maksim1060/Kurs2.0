@@ -1,7 +1,7 @@
 package kurs20.com.example.demo.entity.service;
 
 import kurs20.com.example.demo.entity.Question;
-import kurs20.com.example.demo.entity.service.controller.controller.repositoy.QuestionRepository;
+import kurs20.com.example.demo.entity.repositoy.QuestionRepository;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 

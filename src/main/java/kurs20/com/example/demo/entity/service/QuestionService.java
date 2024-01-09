@@ -12,4 +12,10 @@ public interface QuestionService {
     Question remove(String question, String answer);
     Collection <Question> getAll();
     Question getRandomQuestion();
+
+    interface ExaminerService {
+        Collection<Question> getQuestions(int size);
+
+
+    }
 }

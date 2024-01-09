@@ -1,7 +1,7 @@
-package kurs20.com.example.demo.entity.service.controller.controller;
+package kurs20.com.example.demo.entity.controller;
 
 import kurs20.com.example.demo.entity.Question;
-import kurs20.com.example.demo.entity.service.controller.srevice.ExaminerService;
+import kurs20.com.example.demo.entity.service.QuestionService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,9 +12,9 @@ import java.util.Collection;
 @RestController
 @RequestMapping("/exam")
 public class ExamController {
-    private final ExaminerService examinerService;
+    private final QuestionService.ExaminerService examinerService;
 
-    public ExamController(ExaminerService examinerService) {
+    public ExamController(QuestionService.ExaminerService examinerService) {
         this.examinerService = examinerService;
     }
 
